@@ -2,8 +2,10 @@ import java.io.FileInputStream;
 
 public class Produtor extends Thread {
 	Buffer b;
+	String nome;
 	FileInputStream fs;
 	public void run (){
+		System.out.println("Produtor: " + nome + "oferece tais itens: ");
 		int x;
 		try{
 			while ((x=fs.read()) != -1)
@@ -15,8 +17,9 @@ public class Produtor extends Thread {
 		}
 	}
 	
-	Produtor(String fname, Buffer b){
+	Produtor(String fname, Buffer b, String name){
 		this.b = b;
+		this.nome = name;
 		try{
 			fs = new FileInputStream(fname);
 		}catch (Exception e){

@@ -28,5 +28,5 @@ public class Buffer {
 		count = 0;
 		front = rear = 0;
 	}
-
+	
 }
